@@ -107,14 +107,4 @@ modoOscuroCheckbox.addEventListener('change', toggleModoOscuro);
     localStorage.removeItem('user');
     location.href="login.html";
   })
-  }
-  
-  // Funcionalidad para Logout con el botón salir
-  //   Elimina los datos del usuario del Local storage
-  //   Redirige a la página de Login
-  document.getElementById('salir').addEventListener('click', function() {
-    localStorage.removeItem('user');
-
-    location.href="login.html";
-  })
-  );
+});
