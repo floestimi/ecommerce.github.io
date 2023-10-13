@@ -160,3 +160,4 @@ document.addEventListener("DOMContentLoaded", () => {
     displayProducts(products);
   });
 });
+
