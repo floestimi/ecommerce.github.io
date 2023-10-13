@@ -1,6 +1,3 @@
-// Escucha el click en las categorías que se muestran
-//   Redirige a su categoría correspondiente
-//   Funcionalidad de los slides
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
