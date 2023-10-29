@@ -54,6 +54,7 @@ function mostrarInfo(info) {
         </div>       
         `;
   }
+  
   // Variable para acceder al botón y otra para el array de productos del carrito
   let comprarBtn = document.getElementById("comprar");
   let productosDelCarrito = [];
@@ -84,6 +85,7 @@ comprarBtn.addEventListener("click", function() {
 }
 
 let puntajeEstrellas = "";
+
 //Función que guarda estrellas en un string según el puntaje, el cual se pasa como parámetro para reutilizar la función
 function creandoEstrellas(puntajeUser) {
   let allStars = "";
@@ -111,6 +113,7 @@ function generarColorCSSAleatorio() {
   var colorRGB = rojo + verde + azul;
   return colorRGB;
 }
+
 function mostrarComments(comentarios) {
   let contenedorComentarios = document.getElementById("commentList");
   for (let comment of comentarios) {
@@ -158,6 +161,7 @@ function generarComment() {
       return date.replace("T", " ").slice(0, 19);
     },
   };
+  
   let colorRandom = generarColorCSSAleatorio();
   let avatar = `https://api.dicebear.com/7.x/avataaars/svg?seed=${comentario.usuario}&backgroundColor=${colorRandom}`;
   creandoEstrellas(comentario.puntos);
