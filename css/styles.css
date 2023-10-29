@@ -5,12 +5,35 @@
   font-family: 'Verdana', serif !important;
 }
 
+#divLogin, #contInfoProd {
+  background-color: #ffff;
+}
+
+body {
+  
+  background-image: url(img/fondo.png);
+  
+  background-repeat: repeat;
+
+  background-size: 400px;
+  
+  background-color: rgb(248, 249, 250);
+  transition: all 1.5s ease;
+}
 .jumbotron .display-4 {
   font-weight: bold;
 }
 
 nav a {
   text-decoration: none;
+}
+.navbar {
+  background-color: #000000;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 4990;
 }
 
 .bd-placeholder-img {
@@ -28,22 +51,26 @@ nav a {
   }
 }
 
+#cover {
+  width: 35%;
+}
+
+.sombra {
+  box-shadow:  0px 0px 70px rgba(0, 0, 0, 0.74);  
+  border-radius: 5px;
+}
+
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
-  background-color: #53C0FB;
-  background: url('../img/cover_back.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   color: black;
   font-weight: bold;
 }
 
 @media (min-width: 768px) {
   .jumbotron {
-    padding-top: 6rem;
+    padding-top: 4rem;
     padding-bottom: 6rem;
   }
 }
@@ -59,7 +86,7 @@ nav a {
 .jumbotron .container {
   max-width: 40rem;
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
+  border-radius: 5px;
   text-shadow: 1px 1px 2px grey;
 }
 
@@ -189,14 +216,207 @@ a.custom-card:hover {
   color: orange;
 }
 
-#img-login {
-  height: 200px;
+
+/* Estilos titulo listado de autos */
+
+.titulo {
+  font-family: raleway;
 }
 
-.divLogin {
-  padding: 0px 500px;
+/* Fin Estilos titulo listado de autos */
+
+/* Estilos listado de autos */
+
+.contenedor-producto {
+  font-family: raleway;
+  color: rgba(0, 0, 0, 0.658);
+  display: flex;
+  padding: 1em;
+  border: 1px solid grey;
+
 }
 
-#login {
-  width: 294px;
+.imagen-producto {
+  border: 1px solid grey;
+  border-radius: 5px;
+  transition: transform 0.2s;
+
+}
+
+.imagen-producto:hover {
+  transform: scale(1.03);
+}
+
+.contenedor-producto{
+  cursor: pointer;
+}
+
+#salir {
+    font-weight: bold;
+    border: 0;
+    background-image: linear-gradient(
+        150deg,
+        #35353679,
+        orange,
+        rgb(90,90,90)
+    );
+    border-radius: 5px;
+    color: #000000;
+    display: flex;
+    font-size: 14px;
+    padding: 2px;
+    cursor: pointer;
+    transition: .3s;
+}
+#salir span {
+    background-color: #00000023;
+    padding: 8px 12px;
+    border-radius: 12px;
+    transition: .5s;
+}
+#salir:hover span {
+    background: none;
+}
+#salir:active {
+    transform: scale(0.5);
+}
+
+#user {
+  color: rgb(253, 182, 50);
+}
+
+#buscar:focus {
+  outline: none;
+}
+
+.buscando{
+  display: none;
+}
+
+.img-thumbnail:hover {
+  transform: scale(1.03);
+}
+
+.img-thumbnail {
+  max-width: 100%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  transition: transform 0.2s;
+}
+
+#contenedor-producto{
+  font-family: raleway;
+}
+
+.imagen-info{
+  border-radius: 10%;
+  width: 100%;
+}
+
+.contenedor-imagen-info{
+  border: 1px solid gray;
+  margin: 5px;
+  transition: 0.3s;
+  border-radius: 10%;
+}
+
+.contenedor-imagen-info:hover{
+  transform: scale(1.2);
+  border-radius: 10%;
+  cursor: pointer;
+  filter: contrast(120%);
+}
+
+#contenedor-relacionados{
+  font-family: raleway;
+}
+
+.estrellas{
+  display: flex; /*para alinear de forma horizontal las estrellas*/
+  margin-top: -5px;
+  flex-direction:row-reverse;/*invierte el orden en que se ven las estrellas, quedan de derecha a izquierda*/
+  float: left;
+  gap: 5px;
+}
+.estrellas>input{
+  display:none; /*con esto escondo los inputs de tipo radio de las estrellas*/
+}
+
+.estrellas>label{
+  width: 19px;
+  cursor: pointer;
+  color:rgb(243, 162, 11);
+}
+/* El simbolo ~ es un selector de hermanos generales, sirve para cambiar el estilo de todos los elementos hermanos del que le indique*/
+label:hover .bi-star::before,/* cuando se hace hover sobre una label, con el .bi-star::before se cambia el icono de la estrella y esto afecta a todas las estrellas de las labels hermanas de la que le hago hover*/
+label:hover ~ label .bi-star::before {
+  content: "\f586"; /* Cambio el contenido del icono por una estrella llena*/
+}
+input:checked ~ label  .bi-star::before { 
+  content: "\f586"; /* con esto me aseguro que al hacer check en una estrella, cambie el contenido de todos los iconos que vienen despues del que está checkeado */
+}
+.estrellita{
+  color:rgb(243, 162, 11);
+}
+.no-resize {
+  resize: none;
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+  background-color: #090717f2;
+  color: #fff;
+  transition: all 1.5s ease;
+}
+.dark-mode-button-active {
+  background: #ffffff;
+  color: #090717f2;
+  transition: .9s ease;
+}
+.dark-mode-button-active:hover {
+  box-shadow: 0 0 10px #ffffff,
+              0 0 30px #ffffff,
+              0 0 70px #ffffff,
+              0 0 130px #ffffff;
+}
+#modoOscuroToggle{
+  display: none
+}
+#dark-label:hover{
+  cursor: pointer;
+  color: #000000;
+}
+#contenedorIndex, #contInfoProd, #carrito {
+  color: #000000;
+}
+/* Fin de Estilos para el modo oscuro */
+
+/*Estilo menú desplegable*/
+.dropdown-menu {
+  background-color: #000000;
+  overflow: hidden; 
+}
+.dropdown-item{
+  color: orange;
+  transition: .5s, color .8s;
+      -webkit-transition: .5s, color .8s;
+      -moz-transition: .5s, color .8s;    
+}
+.dropdown-item:hover{
+  transform: translatex(5px);
+      -webkit-transform: translatex(5px);
+      -moz-transform: translatex(5px);
+      font-size: large;
+}
+
+/*Estilo avatar*/    
+.avatar{
+  width: 70px;
+  height: 70px;
+  box-shadow: 2px 2px 5px rgb(0, 0, 0);
+  overflow: hidden;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px; 
+  margin-bottom: 10px;
 }
