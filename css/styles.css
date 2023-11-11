@@ -386,11 +386,9 @@ body.dark-mode {
   cursor: pointer;
   color: #000000;
 }
-
-#contenedorIndex, #contInfoProd, #carrito {
+#contenedorIndex, #contInfoProd, #carrito, #wrapper {
   color: #000000;
 }
-
 /* Fin de Estilos para el modo oscuro */
 
 /*Estilo menú desplegable*/
@@ -419,6 +417,15 @@ body.dark-mode {
   overflow: hidden;
   border-radius: 50%;
   float: left;
-  margin-right: 20px; 
+  margin-right: 20px;
   margin-bottom: 10px;
+}
+.subTituloPago{
+  font-size: 10px;
+  color: gray;
+}
+
+/*Estilo Login*/
+.box-area{
+  width: 750px;
 }
